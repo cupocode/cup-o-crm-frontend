@@ -1,11 +1,11 @@
 
-import './App.css';
+import './App.scss';
 import Login from './Components/Login'
 
 function App() {
   return (
-    <div className="App">
-        <Login/>
+    <div className="App capp-container">
+        <Login className="login"/>
     </div>
   );
 }
