@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
 import './login.scss'
 import Logo from '../Assets/icon-blue.png'
 
@@ -32,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+ 
+
   },
   avatar: {
     margin: theme.spacing(1),
@@ -44,6 +47,13 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  overrides: {
+    MuiTypography: {
+       html: {
+    
+    }
+ }
+}
 }));
 
 
@@ -52,26 +62,28 @@ const Login = () => {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs" className="login-container">
+    <Container component="main" maxWidth="xs" className="login-container" style={{fontFamily: "'Questrial', sans-serif!important"}}>
       <CssBaseline />
       <div className={classes.paper}>
         <img className="login-logo" src={Logo}/>
-        <Typography component="h1" variant="h5">
-          Cup O CRM Sign in
+        <Typography component="h1" variant="h5" className="title">
+          Cup O CRM 
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
+          style={{fontFamily: "'Questrial', sans-serif"}}
             variant="outlined"
             margin="normal"
             required
             fullWidth
             id="username"
-            label="User Name"
+            label="username"
             name="username"
             autoComplete="username"
             autoFocus
           />
           <TextField
+          style={{fontFamily: "'Questrial', sans-serif"}}
             variant="outlined"
             margin="normal"
             required
@@ -87,6 +99,7 @@ const Login = () => {
             label="Remember me"
           />
           <Button
+          style={{fontFamily: "'Questrial', sans-serif"}}
             type="submit"
             fullWidth
             variant="contained"
