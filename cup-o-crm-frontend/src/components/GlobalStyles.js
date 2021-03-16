@@ -6,12 +6,15 @@ const useStyles = makeStyles(() => createStyles({
       boxSizing: 'border-box',
       margin: 0,
       padding: 0,
+      fontFamily: 'Abel, sans-serif!important',
+      fontWeight: 'bold!important'
     },
     html: {
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',
       height: '100%',
-      width: '100%'
+      width: '100%',
+      fontFamily: 'Abel, sans-serif;'
     },
     body: {
       backgroundColor: '#f4f6f8',

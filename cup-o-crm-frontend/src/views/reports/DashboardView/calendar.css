@@ -7,3 +7,23 @@
     0 8px 8px rgba(0,0,0,0.12),
     0 16px 16px rgba(0,0,0,0.12);
 }
+
+.react-calendar__tile--active {
+    background: #009688!important;
+}
+
+.react-calendar__tile--now {
+    background: #009688!important;
+}
+.react-calendar__month-view__weekdays {
+    color: black;
+    text-decoration:none!important;
+  }
+  
+  .react-calendar__navigation button {
+    font-size: 1em;
+  }
+
+  abbr[title]{
+      text-decoration:none;
+  }
