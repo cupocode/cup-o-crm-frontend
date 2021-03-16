@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState, React } from 'react';
 import {
   Container,
-  Grid,
+  // Grid,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -13,6 +13,9 @@ import Page from 'src/components/Page';
 // import TotalCustomers from './TotalCustomers';
 // import TotalProfit from './TotalProfit';
 // import TrafficByDevice from './TrafficByDevice';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import './calendar.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,89 +29,19 @@ const useStyles = makeStyles((theme) => ({
 const Dashboard = () => {
   const classes = useStyles();
 
+  const [calDate, setCalDate] = useState(new Date());
+
+  function onChange() {
+    setCalDate(calDate);
+  }
+
   return (
     <Page
       className={classes.root}
       title="Dashboard"
     >
       <Container maxWidth={false}>
-        <Grid
-          container
-          spacing={3}
-        >
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            {/* <Budget /> */}
-          </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            {/* <TotalCustomers /> */}
-          </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            {/* <TasksProgress /> */}
-          </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            {/* <TotalProfit /> */}
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            {/* <Sales /> */}
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            {/* <TrafficByDevice /> */}
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            {/* <LatestProducts /> */}
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            {/* <LatestOrders /> */}
-          </Grid>
-        </Grid>
+        <Calendar onChange={onChange} value={calDate} />
       </Container>
     </Page>
   );

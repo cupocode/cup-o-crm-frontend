@@ -67,35 +67,35 @@ const ProductCard = ({ className, product, ...rest }) => {
         <Typography
           align="center"
           color="textPrimary"
-          variant="body1"
+          variant="h5"
         >
           {product.detail1}
         </Typography>
         <Typography
           align="center"
           color="textPrimary"
-          variant="body1"
+          variant="h5"
         >
           {product.detail2}
         </Typography>
         <Typography
           align="center"
           color="textPrimary"
-          variant="body1"
+          variant="h5"
         >
           {product.detail3}
         </Typography>
         <Typography
           align="center"
           color="textPrimary"
-          variant="body1"
+          variant="h5"
         >
           {product.detail4}
         </Typography>
         <Typography
           align="center"
           color="textPrimary"
-          variant="body1"
+          variant="h5"
         >
           {product.detail5}
         </Typography>
