@@ -7,12 +7,12 @@ import {
   Card,
   CardContent,
   Divider,
-  Grid,
+  // Grid,
   Typography,
   makeStyles
 } from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+// import AccessTimeIcon from '@material-ui/icons/AccessTime';
+// import GetAppIcon from '@material-ui/icons/GetApp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,51 +63,37 @@ const ProductCard = ({ className, product, ...rest }) => {
         >
           {product.description}
         </Typography>
+        <Typography
+          align="center"
+          color="textPrimary"
+          variant="body1"
+        >
+          {product.detail1}
+        </Typography>
+        <Typography
+          align="center"
+          color="textPrimary"
+          variant="body1"
+        >
+          {product.detail2}
+        </Typography>
+        <Typography
+          align="center"
+          color="textPrimary"
+          variant="body1"
+        >
+          {product.detail3}
+        </Typography>
+        <Typography
+          align="center"
+          color="textPrimary"
+          variant="body1"
+        >
+          {product.detail4}
+        </Typography>
       </CardContent>
       <Box flexGrow={1} />
       <Divider />
-      <Box p={2}>
-        <Grid
-          container
-          justify="space-between"
-          spacing={2}
-        >
-          <Grid
-            className={classes.statsItem}
-            item
-          >
-            <AccessTimeIcon
-              className={classes.statsIcon}
-              color="action"
-            />
-            <Typography
-              color="textSecondary"
-              display="inline"
-              variant="body2"
-            >
-              Updated 2hr ago
-            </Typography>
-          </Grid>
-          <Grid
-            className={classes.statsItem}
-            item
-          >
-            <GetAppIcon
-              className={classes.statsIcon}
-              color="action"
-            />
-            <Typography
-              color="textSecondary"
-              display="inline"
-              variant="body2"
-            >
-              {product.totalDownloads}
-              {' '}
-              Downloads
-            </Typography>
-          </Grid>
-        </Grid>
-      </Box>
     </Card>
   );
 };

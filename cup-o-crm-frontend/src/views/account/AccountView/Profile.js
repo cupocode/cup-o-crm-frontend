@@ -15,12 +15,12 @@ import {
 } from '@material-ui/core';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
+  avatar: 'https://scontent.fwbw1-1.fna.fbcdn.net/v/t1.0-9/117444222_3297088593692231_1581697655045620892_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=kgzxBEwBv3oAX9YJB7G&_nc_ht=scontent.fwbw1-1.fna&oh=d39fedf821ac36e7395694c8b8a803d0&oe=607742F7',
+  city: 'Mt. Carmel',
   country: 'USA',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
-  timezone: 'GTM-7'
+  jobTitle: 'Salesman',
+  name: 'Nate Wagher',
+  timezone: 'EST'
 };
 
 const useStyles = makeStyles(() => ({
