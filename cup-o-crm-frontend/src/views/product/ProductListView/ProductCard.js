@@ -17,7 +17,8 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    boxShadow: '0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12),0 16px 16px rgba(0,0,0,0.12)'
   },
   statsItem: {
     alignItems: 'center',
@@ -90,6 +91,13 @@ const ProductCard = ({ className, product, ...rest }) => {
           variant="body1"
         >
           {product.detail4}
+        </Typography>
+        <Typography
+          align="center"
+          color="textPrimary"
+          variant="body1"
+        >
+          {product.detail5}
         </Typography>
       </CardContent>
       <Box flexGrow={1} />
