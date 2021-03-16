@@ -1,18 +1,21 @@
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core';
+import GlobalStyles from 'src/components/GlobalStyles';
+import 'src/mixins/chartjs';
+import theme from 'src/theme';
+import routes from 'src/routes';
 
-import './App.scss';
-import Login from './Components/Login'
-import Dashboard from './Components/Dashboard/Dashboard'
+const App = () => {
+  const routing = useRoutes(routes);
 
-
-
-
-function App() {
   return (
-    <div className="App capp-container" >
-        {/* <Login className="login" /> */}
-        <Dashboard/>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      {routing}
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
