@@ -18,10 +18,12 @@ import {
   Settings as SettingsIcon,
   ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
+  Clipboard as ClipboardIcon,
   // UserPlus as UserPlusIcon,
   Users as UsersIcon
 } from 'react-feather';
 import NavItem from './NavItem';
+import '../../layouts.css';
 
 const items = [
   {
@@ -40,6 +42,11 @@ const items = [
     title: 'Packages'
   },
   {
+    href: '/app/packagecreator',
+    icon: ClipboardIcon,
+    title: 'Package Creator',
+  },
+  {
     href: '/app/account',
     icon: UserIcon,
     title: 'Account'
@@ -49,7 +56,6 @@ const items = [
     icon: SettingsIcon,
     title: 'Settings'
   },
-
 ];
 
 const useStyles = makeStyles(() => ({
@@ -76,7 +82,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
     if (openMobile && onMobileClose) {
       onMobileClose();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   const content = (
