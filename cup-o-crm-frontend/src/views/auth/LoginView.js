@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -29,6 +29,26 @@ const LoginView = () => {
   const classes = useStyles();
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
+    const signInWithEmailAndPasswordHandler = 
+            (event,email, password) => {
+                event.preventDefault();
+    };
+
+      const onChangeHandler = (event) => {
+          const {name, value} = event.currentTarget;
+
+          if(name === 'userEmail') {
+              setEmail(value);
+          }
+          else if(name === 'userPassword'){
+            setPassword(value);
+          }
+      };
+
+
   return (
     <Page
       className={classes.root}
@@ -43,7 +63,7 @@ const LoginView = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
+              email: 'natwagner@poop.io',
               password: 'Password123'
             }}
             validationSchema={Yup.object().shape({
@@ -88,16 +108,6 @@ const LoginView = () => {
                     xs={12}
                     md={6}
                   >
-                    <Button
-                      color="primary"
-                      fullWidth
-                      startIcon={<FacebookIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Facebook
-                    </Button>
                   </Grid>
                   <Grid
                     item
@@ -133,12 +143,14 @@ const LoginView = () => {
                   helperText={touched.email && errors.email}
                   label="Email Address"
                   margin="normal"
-                  name="email"
+                  name="userEmail"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   type="email"
-                  value={values.email}
+                  value = {email}
                   variant="outlined"
+                  id="userEmail"
+                  onChange = {(event) => onChangeHandler(event)}
                 />
                 <TextField
                   error={Boolean(touched.password && errors.password)}
@@ -146,12 +158,15 @@ const LoginView = () => {
                   helperText={touched.password && errors.password}
                   label="Password"
                   margin="normal"
-                  name="password"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   type="password"
-                  value={values.password}
                   variant="outlined"
+                  name="userPassword"
+                  value = {password}
+                  placeholder="Your Password"
+                  id="userPassword"
+                  onChange = {(event) => onChangeHandler(event)}
                 />
                 <Box my={2}>
                   <Button
