@@ -8,7 +8,7 @@ import Page from 'src/components/Page';
 // import Budget from './Budget';
 // import LatestOrders from './LatestOrders';
 // import LatestProducts from './LatestProducts';
-// import Sales from './Sales';
+import Sales from './Sales';
 // import TasksProgress from './TasksProgress';
 // import TotalCustomers from './TotalCustomers';
 // import TotalProfit from './TotalProfit';
@@ -16,6 +16,7 @@ import Page from 'src/components/Page';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './calendar.css';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +43,8 @@ const Dashboard = () => {
     >
       <Container maxWidth={false}>
         <Calendar onChange={onChange} value={calDate} />
+ 
+
       </Container>
     </Page>
   );
