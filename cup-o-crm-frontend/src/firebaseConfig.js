@@ -1,8 +1,8 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from 'firebase'
+import 'firebase/auth'
+import 'firebase/app'
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCiRsUrueOcPChJPBVUkHXMfE8mxDYEHOw",
     authDomain: "cupocrm.firebaseapp.com",
     projectId: "cupocrm",
@@ -11,9 +11,12 @@ var firebaseConfig = {
     appId: "1:372314356784:web:99901b6774b75efa9b01f5",
     measurementId: "G-XZ8EVKCC02"
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+firebase.auth()
+
+  export default firebaseConfig;
+ 

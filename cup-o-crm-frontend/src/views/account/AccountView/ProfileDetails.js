@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import firebase from "firebase/app";
+import "firebase/auth";
 import {
   Box,
   Button,
@@ -33,6 +35,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ProfileDetails = ({ className, ...rest }) => {
+
+  let user = firebase.auth().currentUser;
+  console.log(user.email)
+
   const classes = useStyles();
   const [values, setValues] = useState({
     firstName: 'Nate',

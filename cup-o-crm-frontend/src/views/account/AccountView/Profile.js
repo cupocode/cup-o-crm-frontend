@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import moment from 'moment';
+import firebase from "firebase/app";
+import "firebase/auth";
 import {
   Avatar,
   Box,
@@ -19,7 +21,7 @@ const user = {
   city: 'Mt. Carmel',
   country: 'USA',
   jobTitle: 'Salesman',
-  name: 'Nate Wagher',
+  name: 'Nate Wagner',
   timezone: 'EST'
 };
 
@@ -33,6 +35,10 @@ const useStyles = makeStyles(() => ({
 
 const Profile = ({ className, ...rest }) => {
   const classes = useStyles();
+
+  let user = firebase.auth().currentUser;
+            console.log(user && user.email)
+ 
 
   return (
     <Card
@@ -54,7 +60,7 @@ const Profile = ({ className, ...rest }) => {
             gutterBottom
             variant="h3"
           >
-            {user.name}
+            {user.email}
           </Typography>
           <Typography
             color="textSecondary"
